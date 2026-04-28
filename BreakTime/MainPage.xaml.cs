@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
         intMin = 0;
         int minute = 0;
         isRunning = true;
-        Dispatcher.StartTimer(TimeSpan.FromMilliseconds(100), () =>
+        Dispatcher.StartTimer(TimeSpan.FromSeconds(1), () =>
         {
             intSec++;
             if (intSec > 59)
@@ -68,6 +68,7 @@ public partial class MainPage : ContentPage
     private void Reset_OnClicked(object sender, EventArgs e)
     {
         isRunning = false;
+        frmMain.BackgroundColor = Colors.White;
         lblDisplay.Text = "Start Break Time Timer";
     }
 }
